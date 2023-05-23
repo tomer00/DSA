@@ -10,6 +10,7 @@ void swapXOR(int* n1, int* n2) {
 }
 
 //swaping with a third temp var
+//refrence variables
 void swapTemp(int& n1, int& n2) {
     int t = n1;
     n1 = n2;
