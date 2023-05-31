@@ -28,6 +28,7 @@ int pow(int a, int n) {
     else return (p * 1LL * p) % M;
 }
 
+//Power by checking set bits
 int powIterative(int a, int n) {
     int ans = 1;
     while (n) {
