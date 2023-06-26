@@ -14,6 +14,14 @@ int binarySea(int* arr, int n, int ele) {
     }
     return -1;
 }
+//recursive binary search
+int binarySea(int* arr, int h, int l, int ele) {
+    if (l > h) return -1;
+    int mid = l + (h - l) / 2;
+    if (ele == arr[mid]) return mid;
+    else if (ele < arr[mid]) return binarySea(arr, mid - 1, l, ele);
+    else return binarySea(arr, h, mid + 1, ele);
+}
 
 int main() {
 
@@ -27,7 +35,7 @@ int main() {
 
     cout << "Enter element to search : ";
     cin >> no;
-    int in = binarySea(arr, n, no);
+    int in = binarySea(arr, n - 1, 0, no);
     if (in == -1) cout << "Element " << no << " not found in array" << endl;
     else cout << "Element " << no << " present at " << in << " index" << endl;
     return 0;
