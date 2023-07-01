@@ -62,6 +62,15 @@ public:
     bool serachRecursive(int val) {
         return searchRec(root, val);
     }
+    bool serachIterative(int val) {
+        node* temp = root;
+        while (temp != NULL) {
+            if (val == temp->val) return true;
+            if (val < temp->val) temp = temp->left;
+            else temp = temp->right;
+        }
+        return false;
+    }
     bool del(int val) {
     }
     void printInorder() {
@@ -81,7 +90,7 @@ int main() {
 
     bst.printInorder(); //1 3 5 8 15
 
-    cout<<bst.serachRecursive(15)<<"  "<<bst.serachRecursive(10)<<endl;
+    cout << bst.serachRecursive(15) << "  " << bst.serachIterative(10) << endl;
 
     return 0;
 }
