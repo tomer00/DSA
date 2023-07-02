@@ -32,6 +32,18 @@ class BST {
         cout << root->val << " ";
         inorder(root->right);
     }
+    void preorder(node* root) {
+        if (root == NULL) return;
+        cout << root->val << " ";
+        preorder(root->left);
+        preorder(root->right);
+    }
+    void postorder(node* root) {
+        if (root == NULL) return;
+        postorder(root->left);
+        postorder(root->right);
+        cout << root->val << " ";
+    }
     bool searchRec(node* root, int val) {
         if (root == NULL) return false;
         if (root->val == val) return true;
@@ -77,6 +89,14 @@ public:
         inorder(root);
         cout << endl;
     }
+    void printPreorder() {
+        preorder(root);
+        cout << endl;
+    }
+    void printPostorder() {
+        postorder(root);
+        cout << endl;
+    }
 };
 
 int main() {
@@ -89,6 +109,8 @@ int main() {
     bst.addIterative(8);
 
     bst.printInorder(); //1 3 5 8 15
+    bst.printPostorder(); //3 8 5 1 15
+    bst.printPreorder(); //15 1 5 3 8
 
     cout << bst.serachRecursive(15) << "  " << bst.serachIterative(10) << endl;
 
