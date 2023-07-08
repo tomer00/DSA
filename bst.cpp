@@ -48,7 +48,7 @@ class BST {
         if (root == NULL) return false;
         if (root->val == val) return true;
         else if (root->val < val) return searchRec(root->right, val);
-        else searchRec(root->left, val);
+        else return searchRec(root->left, val);
     }
 public:
     void add(int val) {
@@ -83,8 +83,52 @@ public:
         }
         return false;
     }
-    bool del(int val) {
+    int findPreviousElement(node* root) {
+        node* t = root->left;
+        while (t->right != NULL) {
+            t = t->right;
+        }
+        return t->val;
     }
+    node* delRecur(node* root, int val) {
+        if (root == NULL) return NULL;
+        //first find the required node
+        if (root->val == val) {
+            // here 4 cases 
+            //node is terminating node with both children
+            if (root->left != NULL && root->right != NULL) {
+                int prv = findPreviousElement(root);
+                root->val = prv;
+                root->left = delRecur(root->left, prv);
+                return root;
+            }
+            //node is terminating node with no children
+            if (root->left == NULL && root->right == NULL) {
+                delete root;
+                return NULL;
+            }
+            //node having single left child
+            if (root->left != NULL) {
+                node* t = root->left;
+                delete root;
+                return t;
+            }
+            //node having single right child
+            node* t = root->right;
+            delete root;
+            return t;
+        }
+        
+        if (root->val < val)
+            root->right = delRecur(root->right, val);
+        else root->left = delRecur(root->left, val);
+
+        return root;
+    }
+    void del(int val) {
+        this->root = delRecur(root, val);
+    }
+
     void printInorder() {
         inorder(root);
         cout << endl;
@@ -114,5 +158,7 @@ int main() {
 
     cout << bst.serachRecursive(15) << "  " << bst.serachIterative(10) << endl;
 
+    bst.del(15);
+    bst.printInorder();
     return 0;
 }
