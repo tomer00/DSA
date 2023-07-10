@@ -1,1 +1,2 @@
 1. Stack using LinkedList
+2. Stack using Array Static
