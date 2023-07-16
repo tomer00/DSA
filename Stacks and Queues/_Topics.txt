@@ -2,3 +2,4 @@
 2. Stack using Array Static
 3. Stack using Array Dynamic
 4. Two Stacks
+5. Queue using Array Static
