@@ -76,17 +76,34 @@ public:
         prev->next = NULL;
         return true;
     }
+    void revLL() {
+        Node* curr = head;
+        Node* prev = NULL;
+        Node* next = NULL;
+        while (curr != NULL) {
+            next = curr->next;
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+        }
+
+        head = prev;
+    }
 };
 
-void print(Node* temp) {
-    while (temp != NULL) {
-        cout << temp->val << " ";
-        temp = temp->next;
+Node* revLL(Node* root) {
+    Node* curr = root;
+    Node* prev = NULL;
+    Node* next = NULL;
+    while (curr != NULL) {
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
     }
-    cout << endl;
+
+    return prev;
 }
-
-
 
 
 int main() {
@@ -97,7 +114,8 @@ int main() {
     printf("1 : Insert \n");
     printf("2 : Remove \n");
     printf("3 : Remove Last \n");
-    printf("4 : Print \n");
+    printf("4 : Reverse\n");
+    printf("5 : Print \n");
     do {
         printf("\nEnter operation no. : ");
         scanf("%d", &c);
@@ -118,6 +136,10 @@ int main() {
             cout << (ll.delLast() ? "Deleted Last node.." : "Linked List have no node remaning...");
             break;
         case 4:
+            ll.revLL();
+            printf("Linked List Reversed");
+            break;
+        case 5:
             ll.print();
             break;
         }
