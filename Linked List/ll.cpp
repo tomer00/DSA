@@ -106,6 +106,50 @@ Node* revLL(Node* root) {
 }
 
 
+Node* reverse(Node* head) {
+    Node* curr = head;
+    Node* prev = NULL;
+    Node* next = NULL;
+    while (curr != NULL) {
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+    }
+
+    return prev;
+}
+
+Node* getmid(Node* head) {
+    Node* slow = head, * fast = head->next;
+    while (fast != NULL && fast->next != NULL) {
+        fast = fast->next->next;
+        slow = slow->next;
+    }
+    return slow;
+}
+
+// checking if list is Palindrome
+bool check(Node* head, Node* tail) {
+    while (tail != NULL) {
+        if (head->val != tail->val) return false;
+        tail = tail->next;
+        head = head->next;
+    }
+    return true;
+}
+
+// this function is to find the middle
+bool isPalin(Node* head) {
+    if (head == NULL || head->next == NULL) return true;
+
+    Node* mid = getmid(head);
+    Node* revList = reverse(mid->next);
+
+    mid->next = revList;
+    return check(head, revList);
+}
+
 int main() {
 
     LList ll;
@@ -115,7 +159,8 @@ int main() {
     printf("2 : Remove \n");
     printf("3 : Remove Last \n");
     printf("4 : Reverse\n");
-    printf("5 : Print \n");
+    printf("5 : IsPalin\n");
+    printf("6 : Print \n");
     do {
         printf("\nEnter operation no. : ");
         scanf("%d", &c);
@@ -140,6 +185,9 @@ int main() {
             printf("Linked List Reversed");
             break;
         case 5:
+            cout << (isPalin(ll.getHead()) ? "True" : "False");
+            break;
+        case 6:
             ll.print();
             break;
         }
