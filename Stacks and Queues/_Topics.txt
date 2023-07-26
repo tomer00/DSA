@@ -6,3 +6,4 @@
 6. Queue using Array Dynamic
 7. Circular Queue
 8. Queue using Stack
+9. Stack using Queue
