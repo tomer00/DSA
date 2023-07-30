@@ -1,3 +1,4 @@
 1. Linear Search on Array
 2. Binary Search on Array
 3. Ciel in Binary Search
+3. Floor in Binary Search
