@@ -5,3 +5,4 @@
 5. Bubble Sort
 6. Selection Sort
 7. Insertion Sort
+8. Merge Sort
