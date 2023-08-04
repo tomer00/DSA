@@ -6,3 +6,4 @@
 6. Selection Sort
 7. Insertion Sort
 8. Merge Sort
+9. Quick Sort
