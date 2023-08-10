@@ -7,3 +7,4 @@
 7. Insertion Sort
 8. Merge Sort
 9. Quick Sort
+10. Binary Search in rotated Array
