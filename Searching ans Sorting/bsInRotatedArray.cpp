@@ -23,15 +23,16 @@ int bsRotated(int ele, int* arr, int n) {
 
     return -1;
 }
+
+void revArr(int* arr, int s, int e) {
+    while (s < e)
+        swap(arr[s++], arr[e--]);
+}
 void rotF(int* arr, int n, int rot) {
     rot = rot % n;
-    int t;
-    while (rot--) {
-        t = arr[n - 1];
-        for (int i = n-1;i > 0;i--)
-            arr[i] = arr[i-1];
-        arr[0] = t;
-    }
+    revArr(arr, 0, n - 1);
+    revArr(arr, 0, rot - 1);
+    revArr(arr, rot, n - 1);
 }
 void printArr(int* arr, int n) {
     for (int i = 0;i < n;i++)
