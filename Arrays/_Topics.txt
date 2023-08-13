@@ -1,1 +1,2 @@
 1.Rotate Array
+2.Intersection of two Arrays
