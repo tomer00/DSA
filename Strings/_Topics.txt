@@ -1,1 +1,2 @@
 1. Palindrome String
+2. Anagram String
