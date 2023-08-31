@@ -1,1 +1,2 @@
 1. Even Odd using bits
+2. Find only non pair from arr
