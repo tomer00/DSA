@@ -1,3 +1,4 @@
 1.Reverse a Number
 2.Fizz Buzz
 3.Even Odd
+4.Prime No

@@ -1,31 +1,83 @@
 #include <iostream>
 using namespace std;
 class Node {
+public:
+    Node(int val) {
+        data = val;
+        next = NULL;
+    }
     int data;
-    Node* next = NULL;
+    Node* next;
 };
 
-class CircularLL{
+class CircularLL {
 private:
-    Node* root = NULL;
     Node* curr = NULL;
 public:
-    CircularLL() {
-        
+    void addNode(int val) {
+        if (curr == NULL) {
+            curr = new Node(val);
+            curr->next = curr;
+        }
+        else {
+            Node* t = curr->next;
+            Node* n = new Node(val);
+            n->next = t;
+            curr->next = n;
+        }
     }
-    void addNode(int val){
+    bool delNode(int val) {
+        if (curr == NULL) return false;
+        if (curr->data == val) {
+            curr = NULL;
+            return true;
+        }
+        Node* temp = curr->next;
+        while (temp != curr) {
 
-    }
-    bool delNode(int val){
+            if (temp->data == val) {
+                Node* t = temp->next;
+                if (temp == curr)
+                    curr = temp->next;
+                temp->next = t->next;
+                delete t;
+                return true;
+            }
 
+            temp = temp->next;
+        }
+        return false;
     }
-    int forward(){
-
+    int forward() {
+        if (curr != NULL) {
+            curr = curr->next;
+            return curr->data;
+        }
+        return -1;
     }
-    int backward(){
-
+    int backward() {
+        if (curr != NULL) {
+            Node* i = curr;
+            while (i->next != curr) {
+                i = i->next;
+            }
+            curr = i;
+            return curr->data;
+        }
+        return -1;
     }
-    void printList(){
+    void printList() {
+        if (curr != NULL) {
+            if (curr->next == curr) cout << curr->data << endl;
+            else {
+                Node* i = curr;
+                while (i->next != curr) {
+                    cout << i->data << " ";
+                    i = i->next;
+                }
+                cout <<i->data<<endl;
+            }
+        }
 
     }
 };
@@ -57,12 +109,12 @@ int main() {
             cout << (ll.delNode(val) ? "Node deleted" : "Node not found");
             break;
         case 3:
-            cout << "Current pointer moved to: "<<ll.forward();
+            cout << "Current pointer moved to: " << ll.forward();
             break;
         case 4:
-            cout << "Current pointer moved to: "<<ll.backward();
+            cout << "Current pointer moved to: " << ll.backward();
             break;
-        case 6:
+        case 5:
             ll.printList();
             break;
         }
