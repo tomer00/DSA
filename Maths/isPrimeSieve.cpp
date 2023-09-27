@@ -3,6 +3,7 @@ using namespace std;
 
 //better Approach
 bool isPrime(int no) {
+    if(no<2) return false;
     bool* arr = new bool[101];
     arr[0] = arr[1] = 1;
     for (int i = 2;i < 101;i++) {
@@ -11,6 +12,7 @@ bool isPrime(int no) {
             arr[j] = 1;
         }
     }
+    return !arr[no];
 }
 
 int main() {
