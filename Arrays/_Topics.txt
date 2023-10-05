@@ -1,3 +1,4 @@
 1.Rotate Array
 2.Intersection of two Arrays
 3.Union of two Arrays
+4.Linear Search
