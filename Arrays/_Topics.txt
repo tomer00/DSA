@@ -3,3 +3,4 @@
 3.Union of two Arrays
 4.Linear Search
 5.Binary Search
+6.Max Min Search
