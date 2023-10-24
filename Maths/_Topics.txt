@@ -2,4 +2,5 @@
 2.Fizz Buzz
 3.Even Odd
 4.Prime No
-4.Super Prime No
+5.Super Prime No
+6.Factorial of a NO
