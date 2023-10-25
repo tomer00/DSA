@@ -2,4 +2,5 @@
 2. Find only non pair from arr
 3. Count set Bits
 4. Decimal to Binary
-4. Binary to Decimal
+5. Binary to Decimal
+6. Power of 2
