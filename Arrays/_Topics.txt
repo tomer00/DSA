@@ -5,3 +5,4 @@
 5.Binary Search
 6.Max Min Search
 7.Prefix Sum
+8.Find Missing Element
