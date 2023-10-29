@@ -4,3 +4,4 @@
 4. Decimal to Binary
 5. Binary to Decimal
 6. Power of 2
+7. Missing and Repating from 1 to n
