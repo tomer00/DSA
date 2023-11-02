@@ -1,3 +1,4 @@
 1. Binary Tree Traversal
 2. Level Order Traversal
 3. Max Depth of tree
+4. Balanced Binary Tree
