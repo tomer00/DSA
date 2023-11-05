@@ -2,3 +2,4 @@
 2. Level Order Traversal
 3. Max Depth of tree
 4. Balanced Binary Tree
+5. Diameter of Binary Tree
