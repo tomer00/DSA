@@ -3,3 +3,4 @@
 3. Max Depth of tree
 4. Balanced Binary Tree
 5. Diameter of Binary Tree
+6. Max Path Sum
