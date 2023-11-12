@@ -4,3 +4,4 @@
 4. Balanced Binary Tree
 5. Diameter of Binary Tree
 6. Max Path Sum
+7. ZigZag Traversal
