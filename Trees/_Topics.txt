@@ -6,3 +6,4 @@
 6. Max Path Sum
 7. ZigZag Traversal
 8. Boundary Traversal
+9. Vertical Order Traversal
