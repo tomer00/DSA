@@ -7,3 +7,5 @@
 7. ZigZag Traversal
 8. Boundary Traversal
 9. Vertical Order Traversal
+10. Top View of Binary Tree
+11. Bottom View of Binary Tree
