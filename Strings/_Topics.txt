@@ -1,3 +1,4 @@
 1. Palindrome String
 2. Anagram String
 3. Count Duplicate Chars
+4. KMP Algo Pattern Matching
