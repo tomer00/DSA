@@ -2,3 +2,4 @@
 2. Anagram String
 3. Count Duplicate Chars
 4. KMP Algo Pattern Matching
+5. Printing Binary Sequeces
