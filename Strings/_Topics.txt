@@ -4,3 +4,4 @@
 4. KMP Algo Pattern Matching
 5. Printing Binary Sequeces
 6. Reverse Words in string
+7. Single Bit Flipped
